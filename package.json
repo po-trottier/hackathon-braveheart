@@ -1,0 +1,21 @@
+{
+  "name": "instaclone-master",
+  "version": "1.0.0",
+  "description": "Instaclone Master Package",
+  "scripts": {
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/po-trottier/concordia-software-processes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/po-trottier/concordia-software-processes/issues"
+  },
+  "homepage": "https://github.com/po-trottier/concordia-software-processes#readme",
+  "devDependencies": {
+    "firebase-tools": "^7.12.1"
+  }
+}

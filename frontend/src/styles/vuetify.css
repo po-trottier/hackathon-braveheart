@@ -1,0 +1,11 @@
+.theme--light.v-divider {
+  border-color: #dbdbdb !important;
+}
+
+.v-divider--vertical {
+  border-width: 0 1px 0 0 !important;
+}
+
+.theme--light.v-card > .v-card__text, .theme--light.v-card .v-card__subtitle {
+  color: #221f20 !important;
+}
