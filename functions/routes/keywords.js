@@ -1,3 +1,8 @@
 exports.handler = (req, res) => {
-    res.json({ url: "https://www.google.ca" });
+    const url = getUrl(req.query.message);
+    res.json({ url });
+}
+
+function getUrl(message) {
+    return message;
 }
