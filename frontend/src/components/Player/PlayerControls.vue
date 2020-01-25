@@ -4,14 +4,30 @@
       tile
       color="light"
       class="fill-height">
-      <h1>controls</h1>
+      <v-row
+        no-gutters
+        align="center"
+        style="height: 150px;">
+        <v-col>
+          <app-player-controls-buttons />
+          <app-player-controls-seek-bar />
+        </v-col>
+      </v-row>
     </v-sheet>
   </div>
 </template>
 
 <script>
+import PlayerControlsButtons from './PlayerControlsButtons.vue';
+import PlayerControlsSeekBar from './PlayerControlsSeekBar.vue';
+
 export default {
   name: 'PlayerControls',
+
+  components: {
+    appPlayerControlsButtons: PlayerControlsButtons,
+    appPlayerControlsSeekBar: PlayerControlsSeekBar,
+  },
 };
 </script>
 
@@ -22,5 +38,6 @@ export default {
     left: 0;
     right: 0;
     height: 150px;
+    overflow: hidden !important;
   }
 </style>

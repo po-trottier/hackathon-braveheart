@@ -1,0 +1,50 @@
+<template>
+  <v-row
+    no-gutters
+    justify="center"
+    align="center">
+    <v-btn
+      icon
+      class="mx-2">
+      <v-icon>
+        mdi-shuffle
+      </v-icon>
+    </v-btn>
+    <v-btn
+      icon
+      class="mx-2">
+      <v-icon>
+        mdi-skip-backward
+      </v-icon>
+    </v-btn>
+    <v-btn
+      fab
+      dark
+      color="primary"
+      class="mx-6">
+      <v-icon>
+        mdi-play
+      </v-icon>
+    </v-btn>
+    <v-btn
+      icon
+      class="mx-2">
+      <v-icon>
+        mdi-skip-forward
+      </v-icon>
+    </v-btn>
+    <v-btn
+      icon
+      class="mx-2">
+      <v-icon>
+        mdi-repeat
+      </v-icon>
+    </v-btn>
+  </v-row>
+</template>
+
+<script>
+export default {
+  name: 'PlayerControlsButtons',
+};
+</script>
