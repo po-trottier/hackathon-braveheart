@@ -3,37 +3,44 @@
     id="header"
     app
     flat
-    height="75"
+    clipped-left
+    height="90"
     color="white">
-    <v-container>
-      <v-row
-        no-gutters
-        align="center"
-        class="narrow">
-        <div class="py-1 d-flex align-center">
-          <v-img
-            contain
-            width="48"
-            alt="Braveheart Logo"
-            src="@/assets/logo.svg"
-            class="shrink" />
-          <v-divider
-            vertical
-            class="mx-3" />
-          <span class="mono">Project::Braveheart</span>
-        </div>
-        <v-spacer />
-        <v-btn icon>
-          <v-icon>mdi-account-outline</v-icon>
-        </v-btn>
-      </v-row>
-    </v-container>
+    <v-row
+      no-gutters
+      align="center">
+      <v-app-bar-nav-icon @click="toggleDrawer" />
+      <v-spacer />
+      <router-link
+        :to="{ name: 'player' }"
+        class="py-1 align-center">
+        <v-img
+          contain
+          width="48"
+          alt="Braveheart Logo"
+          src="@/assets/logo.svg"
+          class="shrink mx-auto" />
+        <span class="mono">Project::Braveheart</span>
+      </router-link>
+      <v-spacer />
+      <v-btn
+        icon
+        :to="{ name: 'profile' }">
+        <v-icon>mdi-account-outline</v-icon>
+      </v-btn>
+    </v-row>
   </v-app-bar>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'HeaderBar',
+
+  methods: {
+    ...mapActions('drawer', ['toggleDrawer']),
+  },
 };
 </script>
 

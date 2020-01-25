@@ -1,17 +1,17 @@
 <template>
   <div>
     <h1>
-      Landing
+      Profile
     </h1>
-    <v-btn :to="{ name: 'player' }">
-      Go to Player
+    <v-btn>
+      Log Out
     </v-btn>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Landing',
+  name: 'Profile',
 };
 </script>
 
