@@ -6,7 +6,7 @@ import modules from './modules';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  strict: true,
+  strict: false,
   modules: {
     modules,
   },

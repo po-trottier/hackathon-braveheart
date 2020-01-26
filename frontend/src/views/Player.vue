@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import HeaderDrawer from '@/components/Header/HeaderDrawer.vue';
 import PlayerContent from '@/components/Player/PlayerContent.vue';
 import PlayerControls from '@/components/Player/PlayerControls.vue';
@@ -23,6 +24,14 @@ export default {
     appHeaderDrawer: HeaderDrawer,
     appPlayerContent: PlayerContent,
     appPlayerControls: PlayerControls,
+  },
+
+  methods: {
+    ...mapActions('player', ['setPlaylist']),
+  },
+
+  created() {
+    this.setPlaylist(this.$route.params.playlist);
   },
 };
 </script>

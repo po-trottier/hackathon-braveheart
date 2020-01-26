@@ -1,9 +1,11 @@
+/* eslint-disable prefer-destructuring */
 import firebase from 'firebase';
 import app from '@/plugins/firebase';
 import placeholder from '@/assets/cover.png';
 
 const state = {
   playing: false,
+  progress: 0,
   index: -1,
   playlist: {
     name: 'No playlist selected',
@@ -12,16 +14,17 @@ const state = {
   song: {
     title: 'No song selected',
     artistName: 'No artist selected',
-    album: 'No album selected',
+    albumName: 'No album selected',
+    duration: 1,
     url: '',
     cover: placeholder,
     thumbnail: placeholder,
   },
 };
 
-
 const getters = {
   playing: s => s.playing,
+  progress: s => s.progress,
   index: s => s.index,
   playlist: s => s.playlist,
   song: s => s.song,
@@ -32,37 +35,60 @@ const mutations = {
     s.playing = !s.playing;
   },
   mutateIndex: (s, d) => {
-    console.log(d);
     s.index = d;
-    if (s.playlistSongs.length > 0) {
-      s.song = s.playlistSongs[d];
+    s.progress = 0;
+    if (s.playlist.songs.length > 0) {
+      s.song = s.playlist.songs[d];
     }
+  },
+  mutateProgress: (s, d) => {
+    s.progress = d;
   },
   mutatePlaylist: (s, d) => {
     s.playlist = d;
+    s.song = s.playlist.songs[0];
   },
 };
 
 const actions = {
   play: (context) => {
+    if (context.state.song.url === '') {
+      return;
+    }
     context.commit('mutatePlaying');
   },
   forward: (context) => {
-    const index = context.state.index < 0
-      ? -1 : (context.state.index + 1) % context.state.playlistSongs.length;
-    context.commit('mutateIndex', index);
+    const i = context.state.index < 0
+      ? -1 : (context.state.index + 1) % context.state.playlist.songs.length;
+    context.commit('mutateIndex', i);
   },
   backward: (context) => {
-    const index = context.state.index < 0
-      ? context.state.playlistSongs.length - 1 : context.state.index - 1;
-    context.commit('mutateIndex', index);
+    const i = context.state.index < 0
+      ? context.state.playlist.songs.length - 1 : context.state.index - 1;
+    context.commit('mutateIndex', i);
+  },
+  setSeek: (context, payload) => {
+    context.commit('mutateProgress', payload);
   },
   setPlaylist: (context, payload) => {
+    if (payload === '0') {
+      return;
+    }
     const db = firebase.firestore(app);
-    db.collection('playlists').where('name', '==', payload).limit(1).get()
+    db.collection('playlists').doc(payload).collection('songs').get()
       .then((res) => {
-        console.log(res);
-        context.commit('mutatePlaylist', res);
+        const data = res.docs.map(doc => doc.data());
+        if (data.length === 0) {
+          return;
+        }
+        context.commit('mutateIndex', 0);
+        context.commit('mutatePlaylist', {
+          name: payload,
+          songs: data,
+        });
+      })
+      .catch((err) => {
+        console.error(err);
       });
   },
 };

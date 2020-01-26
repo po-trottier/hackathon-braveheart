@@ -2,7 +2,7 @@
   <div>
     <v-img
       id="background"
-      src="@/assets/cover.png" />
+      :src="song.cover" />
     <v-sheet
       id="overlay"
       color="black"
@@ -20,7 +20,7 @@
           <h1 style="font-size: 2.5rem;">
             Now Playing
           </h1>
-          <h3>{{ playlist.name }}</h3>
+          <h3 class="text-capitalize">{{ playlist.name }} - Playlist</h3>
           <v-img
             contain
             class="mx-auto my-10 elevation-12"
@@ -29,7 +29,7 @@
             :src="song.cover" />
           <h2>{{ song.title }}</h2>
           <h3>{{ song.artistName }}</h3>
-          <h4>{{ song.album }}</h4>
+          <h4>{{ song.albumName }}</h4>
         </v-col>
       </v-row>
     </v-container>

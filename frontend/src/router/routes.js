@@ -8,7 +8,7 @@ export default [
     component: Landing,
   },
   {
-    path: '/player',
+    path: '/player/:playlist',
     name: 'player',
     components: {
       header: Header,

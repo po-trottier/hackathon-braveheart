@@ -13,7 +13,7 @@
       <v-app-bar-nav-icon @click="toggleDrawer" />
       <v-spacer />
       <router-link
-        :to="{ name: 'player' }"
+        :to="{ name: 'player', params: { playlist: '0' } }"
         exact
         class="py-1 align-center">
         <v-img
