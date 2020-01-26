@@ -1,4 +1,4 @@
-# Instaclone
+# Project Braveheart
 
 [![Build and Deploy](https://github.com/po-trottier/project-braveheart/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 
