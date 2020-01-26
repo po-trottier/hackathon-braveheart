@@ -10,14 +10,14 @@ This project was created as part of the ConUHacks V hackathon.
 -  Zendesk's Sunshine Conversations API Challenge
 -  Octave's Build an Innovative Music Player Challenge
 
----
-
 ### Written by:
 
 - Benjamin Lanthier
 - Karl Noory 
 - Nahej Lefebvre
 - Pierre-Olivier Trottier
+
+---
 
 ### Objective
 
