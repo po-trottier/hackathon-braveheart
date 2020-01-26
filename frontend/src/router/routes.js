@@ -8,11 +8,19 @@ export default [
     component: Landing,
   },
   {
-    path: '/messaging',
-    name: 'messaging',
+    path: '/player',
+    name: 'player',
     components: {
       header: Header,
-      default: () => import(/* webpackChunkName: "messaging" */ '@/views/Messaging.vue'),
+      default: () => import(/* webpackChunkName: "player" */ '@/views/Player.vue'),
+    },
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    components: {
+      header: Header,
+      default: () => import(/* webpackChunkName: "profile" */ '@/views/Profile.vue'),
     },
   },
 ];
