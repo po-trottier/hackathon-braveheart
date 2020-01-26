@@ -47,16 +47,16 @@ express.use('/',  async ({body}, res, next) => {
                         role: 'appMaker'
                     })
                 }
-                ;await ( async () => {//its dum but only for eslint to shut up
+                await ( async () => {//its dum but only for eslint to shut up
                     const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
                     await smooch.appUsers.sendMessage(body.appUser._id, {
-                        text: 'Here\'s a little something to pump you up !',
+                        text: result.isDefined ? 'Here\'s a little something to pump you up !' : 'Sorry, I did not understand what you ment. So here\'s our to pick!',
                         role: 'appMaker',
                         type: 'text',
                         actions: [
                             {
                                 type: 'link',
-                                text: result.isDefined ? 'Open Custom Playlist' : 'Sorry, I did not understand what you met. So here\'s ower to pick!',
+                                text: 'Open Custom Playlist',
                                 uri: result.url
                             }
                         ]
