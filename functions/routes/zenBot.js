@@ -3,17 +3,8 @@ const express = require('express')()
 
 //Init
 const { logs, config, smooch } = (()=>{
-    //Init Service
-    const admin = require('firebase-admin')
-    const serviceAccount = require("./braveheart-265cb-firebase-adminsdk-510ee-f0ea13f66c.json")
-    admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://braveheart-265cb.firebaseio.com"
-    })
-    console.log("initializing")
-    
     //Get stores
-    const logs = admin.firestore().collection('fb2zenBotLogs')
+    const logs = require('firebase-admin').firestore().collection('fb2zenBotLogs')
     const config = require('firebase-functions').config()
     const smooch = new (require('smooch-core'))({
         keyId: 'app_5e2cff87268bc6000f2d2600',
