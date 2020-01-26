@@ -1,6 +1,6 @@
 # Project::Braveheart Front-End
 
-This project was created as part of the ConUHacks V hackaton.
+This progressive web app was created as part of the ConUHacks V hackaton.
 
 Written by:
 - Benjamin Lanthier

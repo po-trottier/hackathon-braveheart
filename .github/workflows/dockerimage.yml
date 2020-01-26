@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Login to Docker
+      run: docker login braveheart.azurecr.io -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Build the Docker image
+      run: docker build -t braveheart.azurecr.io/project-braveheart:latest .
+    - name: Push the Docker image
+      run: docker push braveheart.azurecr.io/project-braveheart:latest
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Azure Login
+      uses: Azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: Publish to Azure
+      uses: Azure/webapps-container-deploy@v1
+      with:
+        app-name: project-braveheart
+        images: braveheart.azurecr.io/project-braveheart:latest
