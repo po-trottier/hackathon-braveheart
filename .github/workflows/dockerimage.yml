@@ -10,7 +10,7 @@ jobs:
     - name: Login to Docker
       run: docker login braveheart.azurecr.io -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
-      run: docker build . --t braveheart.azurecr.io/project-braveheart:latest
+      run: docker build -t braveheart.azurecr.io/project-braveheart:latest .
     - name: Push the Docker image
       run: docker push braveheart.azurecr.io/project-braveheart:latest
   publish:
