@@ -13,7 +13,7 @@
       <!--<v-app-bar-nav-icon @click="toggleDrawer" />-->
       <v-spacer />
       <router-link
-        :to="{ name: 'player', params: { playlist: '0' } }"
+        :to="{ name: 'player', params: { playlist: current } }"
         exact
         class="py-1 align-center">
         <v-img
@@ -39,6 +39,12 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'HeaderBar',
+
+  computed: {
+    current() {
+      return this.$route.params.playlist ? this.$route.params.playlist : '0';
+    },
+  },
 
   methods: {
     ...mapActions('drawer', ['toggleDrawer']),
