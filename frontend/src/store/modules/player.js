@@ -1,4 +1,4 @@
-/* eslint-disable prefer-destructuring,no-console */
+/* eslint-disable prefer-destructuring,no-console,quote-props */
 import firebase from 'firebase';
 import axios from 'axios';
 import app from '@/plugins/firebase';
@@ -50,22 +50,6 @@ const mutations = {
     s.progress = 0;
     if (s.playlist.songs.length > 0) {
       s.song = s.playlist.songs[d];
-      const player = window.document.getElementById('audio-player');
-      if (!player || !s.song.URL) {
-        return;
-      }
-      axios.get(`https://conuhacks-2020.tsp.cld.touchtunes.com/v1/songs/${s.song.id}`, {
-        headers: {
-          Authorization: '5c0cs7j4b9zqs4lol5w3g7eze6gd2nah',
-        },
-      }).then((res) => {
-        // console.log(s.song.URL);
-        s.song.URL = res.data.playUrl;
-        player.src = s.song.URL;
-        player.load();
-      }).catch((err) => {
-        console.error(err);
-      });
     }
   },
   mutateProgress: (s, d) => {
@@ -88,11 +72,47 @@ const actions = {
     const i = context.state.index < 0
       ? -1 : (context.state.index + 1) % context.state.playlist.songs.length;
     context.commit('mutateIndex', i);
+    axios.get(`https://cors-anywhere.herokuapp.com/https://conuhacks-2020.tsp.cld.touchtunes.com/v1/songs/${context.state.song.id}`, {
+      headers: {
+        'Authorization': '5c0cs7j4b9zqs4lol5w3g7eze6gd2nah',
+      },
+    }).then((resp) => {
+      // console.log(context.state.song.URL);
+      context.state.song.URL = resp.data.playUrl;
+
+      const player = window.document.getElementById('audio-player');
+      if (!player || !context.state.song.URL) {
+        return;
+      }
+      player.src = context.state.song.URL;
+      player.load();
+      player.play();
+    }).catch((err) => {
+      console.error(err);
+    });
   },
   backward: (context) => {
     const i = context.state.index < 0
       ? context.state.playlist.songs.length - 1 : context.state.index - 1;
     context.commit('mutateIndex', i);
+    axios.get(`https://cors-anywhere.herokuapp.com/https://conuhacks-2020.tsp.cld.touchtunes.com/v1/songs/${context.state.song.id}`, {
+      headers: {
+        'Authorization': '5c0cs7j4b9zqs4lol5w3g7eze6gd2nah',
+      },
+    }).then((resp) => {
+      // console.log(context.state.song.URL);
+      context.state.song.URL = resp.data.playUrl;
+
+      const player = window.document.getElementById('audio-player');
+      if (!player || !context.state.song.URL) {
+        return;
+      }
+      player.src = context.state.song.URL;
+      player.load();
+      player.play();
+    }).catch((err) => {
+      console.error(err);
+    });
   },
   setSeek: (context, payload) => {
     context.commit('mutateProgress', payload);
@@ -108,11 +128,30 @@ const actions = {
         if (data.length === 0) {
           return;
         }
+
         context.commit('mutatePlaylist', {
           name: payload,
           songs: data,
         });
         context.commit('mutateIndex', 0);
+
+        axios.get(`https://cors-anywhere.herokuapp.com/https://conuhacks-2020.tsp.cld.touchtunes.com/v1/songs/${context.state.song.id}`, {
+          headers: {
+            'Authorization': '5c0cs7j4b9zqs4lol5w3g7eze6gd2nah',
+          },
+        }).then((resp) => {
+          // console.log(context.state.song.URL);
+          context.state.song.URL = resp.data.playUrl;
+
+          const player = window.document.getElementById('audio-player');
+          if (!player || !context.state.song.URL) {
+            return;
+          }
+          player.src = context.state.song.URL;
+          player.load();
+        }).catch((err) => {
+          console.error(err);
+        });
       })
       .catch((err) => {
         console.error(err);
