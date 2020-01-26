@@ -21,6 +21,7 @@ jobs:
       uses: Azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+        credentials: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Publish to Azure
       uses: Azure/webapps-container-deploy@v1
       with:
