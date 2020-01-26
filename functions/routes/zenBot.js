@@ -19,37 +19,46 @@ const { logs, config, smooch } = (()=>{
 
 //Request handler
 express.use('/',  async ({body}, res, next) => {
-    //Log
-    console.log('new request')
     await logs.doc('BODY').set(body)
-    console.log('body set')
     
-    //Call kw
-    console.log('requesting kw')
-    let result
     try{
-        result = await request(`http://0.0.0.0/keywords/?message=${body.messages.text}`)
+        if(!body.messages){
+            await smooch.appUsers.sendMessage(body.appUser._id, {
+                type: 'text',
+                text: `Hey ${body.appUser.givenName}, how do you feel today?`,
+                role: 'appMaker'
+            })
+        }
+        else {
+            const text = body.messages[0].text
+            if(text.includes('thank')){
+                await smooch.appUsers.sendMessage(body.appUser._id, {
+                    type: 'text',
+                    text: `You're welcome ${body.appUser.givenName}`,
+                    role: 'appMaker'
+                })
+            }
+            else{
+                const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
+                await smooch.appUsers.sendMessage(body.appUser._id, {
+                    text: 'Here\'s a little something to pimp you up !',
+                    role: 'appMaker',
+                    type: 'text',
+                    actions: [
+                        {
+                            type: 'link',
+                            text: 'V Drop the bass V',
+                            uri: result.url
+                        }
+                    ]
+                })
+            }
+        }
     }
     catch(e){
         console.log(`request failed ${e.message}`)
     }
-    console.log('kw responded')
-
-    //Send smooch
-    console.log('requesting smooch')
-    try{
-        await smooch.appUsers.sendMessage(body.appUser._id, {
-            type: 'text',
-            text: `Live long and prosper ${result}`,
-            role: 'appMaker'
-        })
-    }
-    catch(e){
-        console.log(`request failed ${e.message}`)
-    }
-    console.log('smooch responded')
-
-    //End
+    
     res.end()
 })
 

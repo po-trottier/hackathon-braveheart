@@ -17,3 +17,8 @@ exports.zenBot = functions.https.onRequest(bot.handler)
 
 const exporter = require('./routes/exporter')
 exports.exporter = functions.https.onRequest(exporter.handler)
+
+exports.hostProxy = functions.https.onRequest( async (req,res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    res.end( await require('request-promise')('https://braveheart-265cb.web.app/'))
+})
