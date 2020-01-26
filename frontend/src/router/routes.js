@@ -23,4 +23,15 @@ export default [
       default: () => import(/* webpackChunkName: "profile" */ '@/views/Profile.vue'),
     },
   },
+  {
+    path: '/404',
+    name: 'invalid',
+    components: {
+      default: () => import(/* webpackChunkName: "invalid" */ '@/views/404.vue'),
+    },
+  },
+  {
+    path: '*',
+    redirect: { name: 'invalid' },
+  },
 ];

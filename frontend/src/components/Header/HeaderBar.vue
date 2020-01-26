@@ -14,6 +14,7 @@
       <v-spacer />
       <router-link
         :to="{ name: 'player' }"
+        exact
         class="py-1 align-center">
         <v-img
           contain
@@ -48,9 +49,5 @@ export default {
 <style scoped>
   #header {
     border-bottom: 1px solid #dbdbdb !important;
-  }
-
-  .small-search {
-    max-width: 350px;
   }
 </style>
