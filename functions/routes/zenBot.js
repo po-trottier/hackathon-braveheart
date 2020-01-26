@@ -22,6 +22,8 @@ express.use('/',  async ({body}, res, next) => {
     await logs.doc('BODY').set(body)
     
     try{
+        let text
+        if(body.messages && body.messages[0]) text = body.messages[0].text
         switch(body.trigger){
             case "delivery:success":
             await smooch.appUsers.sendMessage(body.appUser._id, {
@@ -38,7 +40,6 @@ express.use('/',  async ({body}, res, next) => {
                 })
             break;
             case "message:appUser":
-                const text = body.messages[0].text
                 if(text.includes('thank')){
                     await smooch.appUsers.sendMessage(body.appUser._id, {
                         type: 'text',
