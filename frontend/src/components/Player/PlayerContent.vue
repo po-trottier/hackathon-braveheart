@@ -2,7 +2,7 @@
   <div>
     <v-img
       id="background"
-      src="@/assets/cover.png" />
+      :src="song.cover" />
     <v-sheet
       id="overlay"
       color="black"
@@ -20,16 +20,16 @@
           <h1 style="font-size: 2.5rem;">
             Now Playing
           </h1>
-          <h3>Playlist</h3>
+          <h3 class="text-capitalize">{{ playlist.name }} - Playlist</h3>
           <v-img
             contain
             class="mx-auto my-10 elevation-12"
             height="300"
             width="300"
-            src="@/assets/cover.png" />
-          <h2>Title</h2>
-          <h3>Artist</h3>
-          <h4>Album</h4>
+            :src="song.cover" />
+          <h2>{{ song.title }}</h2>
+          <h3>{{ song.artistName }}</h3>
+          <h4>{{ song.albumName }}</h4>
         </v-col>
       </v-row>
     </v-container>
@@ -37,8 +37,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'PlayerContent',
+
+  computed: {
+    ...mapGetters('player', ['song', 'playlist']),
+  },
 };
 </script>
 
