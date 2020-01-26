@@ -39,5 +39,6 @@ export default {
     right: 0;
     height: 150px;
     overflow: hidden !important;
+    z-index: 9;
   }
 </style>

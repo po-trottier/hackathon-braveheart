@@ -4,6 +4,7 @@
     app
     flat
     clipped-left
+    style="z-index: 15;"
     height="90"
     color="white">
     <v-row
