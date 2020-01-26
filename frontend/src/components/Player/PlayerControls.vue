@@ -10,7 +10,7 @@
         style="height: 150px;">
         <v-col>
           <app-player-controls-buttons />
-          <app-player-controls-seek-bar />
+          <!--<app-player-controls-seek-bar />-->
         </v-col>
       </v-row>
     </v-sheet>
@@ -19,14 +19,14 @@
 
 <script>
 import PlayerControlsButtons from './PlayerControlsButtons.vue';
-import PlayerControlsSeekBar from './PlayerControlsSeekBar.vue';
+// import PlayerControlsSeekBar from './PlayerControlsSeekBar.vue';
 
 export default {
   name: 'PlayerControls',
 
   components: {
     appPlayerControlsButtons: PlayerControlsButtons,
-    appPlayerControlsSeekBar: PlayerControlsSeekBar,
+    // appPlayerControlsSeekBar: PlayerControlsSeekBar,
   },
 };
 </script>
