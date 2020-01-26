@@ -5,6 +5,7 @@ This project was created as part of the ConUHacks V hackaton.
 Written by:
 - Benjamin Lanthier
 - Karl Noory
+- Nahej Lefebvre
 - Pierre-Olivier Trottier
 
 This is the front-end for the project.
