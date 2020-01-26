@@ -1,20 +1,21 @@
 {
-  "name": "instaclone-master",
+  "name": "project-braveheart",
   "version": "1.0.0",
-  "description": "Instaclone Master Package",
+  "description": "Project::Braveheart Master Package",
   "scripts": {
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "functions": "firebase deploy --only functions"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/po-trottier/concordia-software-processes.git"
+    "url": "git+https://github.com/po-trottier/project-braveheart.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/po-trottier/concordia-software-processes/issues"
+    "url": "https://github.com/po-trottier/project-braveheart/issues"
   },
-  "homepage": "https://github.com/po-trottier/concordia-software-processes#readme",
+  "homepage": "https://github.com/po-trottier/project-braveheart#readme",
   "devDependencies": {
     "firebase-tools": "^7.12.1"
   }
