@@ -12,14 +12,18 @@ This project was created as part of the ConUHacks V hackathon.
 
 - Benjamin Lanthier
 - Karl Noory 
+- Nahej Lefebvre
 - Pierre-Olivier Trottier
 
 ### Technology Stack
 
 - Frontend:
-    - *Vue.JS*
+    - **Vue.JS**
 - Backend:
-    - *Firebase*
+    - **Firebase**
+- ML Algorithm:
+    - **word2vec - Skip-Gram Model**
+    - Trained on a 5 000 000+ words model
 
 
 ### Useful Links
