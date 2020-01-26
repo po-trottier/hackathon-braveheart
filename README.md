@@ -1,6 +1,7 @@
 # Projec::Braveheart
 
-[![Build and Deploy](https://github.com/po-trottier/project-braveheart/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
+[![Deploy Functions](https://github.com/po-trottier/project-braveheart/workflows/Deploy%20Functions/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
+[![Docker Image CI](https://github.com/po-trottier/project-braveheart/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 
 This project was created as part of the ConUHacks V hackathon.
 
