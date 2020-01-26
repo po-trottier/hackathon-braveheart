@@ -47,20 +47,21 @@ express.use('/',  async ({body}, res, next) => {
                         role: 'appMaker'
                     })
                 }
-                //const happy = "https://braveheart-265cb.web.app/player/happy"
-                const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
-                await smooch.appUsers.sendMessage(body.appUser._id, {
-                    text: 'Here\'s a little something to pump you up !',
-                    role: 'appMaker',
-                    type: 'text',
-                    actions: [
-                        {
-                            type: 'link',
-                            text: result.isDefined ? 'Open Custom Playlist' : 'Sorry, I did not understand what you met. So here\'s ower to pick!',
-                            uri: result.url
-                        }
-                    ]
-                })
+                ;await ( async () => {//its dum but only for eslint to shut up
+                    const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
+                    await smooch.appUsers.sendMessage(body.appUser._id, {
+                        text: 'Here\'s a little something to pump you up !',
+                        role: 'appMaker',
+                        type: 'text',
+                        actions: [
+                            {
+                                type: 'link',
+                                text: result.isDefined ? 'Open Custom Playlist' : 'Sorry, I did not understand what you met. So here\'s ower to pick!',
+                                uri: result.url
+                            }
+                        ]
+                    })
+                })()
             break;
         }    
     }
