@@ -4,6 +4,7 @@
     width="350"
     app
     clipped
+    stateless
     style="z-index: 10;"
     :class="{'elevation-6': opened}">
     <v-sheet
