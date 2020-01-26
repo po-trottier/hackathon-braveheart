@@ -44,9 +44,9 @@ Helps users in times of need by providing them with playlists to boost their moo
 - Backend:
     - **Firebase**
 - APIs:
-    - Zendesk API:
+    - **Zendesk API**
         - Allowed us to create an interactive bot across multiple platforms very easily
-    - Octave API:
+    - **Octave API**
         - Allows for the music streaming in the player app
 - ML Algorithm:
     - **word2vec - Skip-Gram Model**
