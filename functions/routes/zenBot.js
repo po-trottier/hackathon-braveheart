@@ -13,7 +13,7 @@ const { logs, config, smooch } = (()=>{
     })
 
     //Return stores
-    console.log("notting went wrong in init")
+    console.log("nothing went wrong in init")
     return { logs, config, smooch }
 })()
 
@@ -33,7 +33,7 @@ express.use('/',  async ({body}, res, next) => {
             case "conversation:start":
                 await smooch.appUsers.sendMessage(body.appUser._id, {
                     type: 'text',
-                    text: `Hey ${body.appUser.givenName}, how do you feel today?`,
+                    text: `Hey ${body.appUser.givenName}, how are you feeling today?`,
                     role: 'appMaker'
                 })
             break;
@@ -46,14 +46,14 @@ express.use('/',  async ({body}, res, next) => {
                     isThanks = true
                     await smooch.appUsers.sendMessage(body.appUser._id, {
                         type: 'text',
-                        text: `You're welcome ${body.appUser.givenName}. What else can I do for you ?`,
+                        text: `You're welcome ${body.appUser.givenName}. What else can I do for you?`,
                         role: 'appMaker'
                     })
                 }
                 await ( async () => {//its dum but only for eslint to shut up
                     const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
                     await smooch.appUsers.sendMessage(body.appUser._id, {
-                        text: result.isDefined || isThanks ? 'Here\'s a little something to pump you up !' : 'Sorry, I did not understand what you meant. So here\'s our pick!',
+                        text: result.isDefined || isThanks ? 'Here\'s a playlist you might feel like listening to!' : 'Sorry, I did not understand what you meant. So here\'s our pick!',
                         role: 'appMaker',
                         type: 'text',
                         actions: [

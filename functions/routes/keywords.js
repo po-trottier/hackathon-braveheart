@@ -25,8 +25,13 @@ function getUrl(message, callback) {
     const motivation = message.includes('motiva') || message.includes('hate') ||  message.includes('difficult') || message.includes('hard') || message.includes('hackathon') || message.includes('conuhacks') || message.includes('challenge') || message.includes('working out') || message.includes('work out') || message.includes('gym') || message.includes('run') || message.includes('exercice') || message.includes('focus') || message.includes('hard') || message.includes('motivation');
     const sleep = message.includes('don\'t want to sleep') || message.includes('dont want to sleep') || message.includes('hate') || message.includes('rest') || message.includes('bed') || message.includes('l8') || message.includes('late') || message.includes('nite') || message.includes('night') || message.includes('early') || message.includes('exhausted') || message.includes('tired') || message.includes ('lay') || message.includes('heavy') || message.includes('sleep');
     const study = message.includes('concentrate') || message.includes('chapters') ||message.includes('material') ||message.includes('read') || message.includes('writ') ||message.includes('prog') ||message.includes('coding') ||message.includes('code') || message.includes('concentra') || message.includes('homework') || message.includes('lab') || message.includes('paper') || message.includes('study') ;
-    const mood_booster =  message.includes('boost') || message.includes('kill me') ||  message.includes('overwhelmed') || message.includes('burn') ||message.includes('hate') || message.includes('mood_booster') || message.includes('day to be over') || message.includes('day to die') || message.includes(feel better) || message.includes('pick m') || message.includes('improve') || message.includes('get better') || message.includes('down');
+    const mood_booster =  message.includes('boost') || message.includes('kill me') ||  message.includes('overwhelmed') || message.includes('burn') ||message.includes('hate') || message.includes('mood_booster') || message.includes('day to be over') || message.includes('day to die') || message.includes('feel better') || message.includes('pick m') || message.includes('improve') || message.includes('get better') || message.includes('down');
 
+    if (message.includes('want') && sad && negative) {
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/mood_booster');
+    } else if (message.includes('want') && sad) {
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sad');
+    }
 
     if (negative && happy) {
         return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy');
