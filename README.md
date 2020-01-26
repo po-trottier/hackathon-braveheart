@@ -9,6 +9,7 @@ This project was created as part of the ConUHacks V hackathon.
 -  Sun Life Financial: Workplace Well-being Challenge 
 -  Zendesk's Sunshine Conversations API Challenge
 -  Octave's Build an Innovative Music Player Challenge
+-  Telus: Technology for Mental Health Well-being
 
 ### Written by:
 
