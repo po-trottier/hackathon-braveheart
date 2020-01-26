@@ -87,6 +87,7 @@ const actions = {
       player.src = context.state.song.URL;
       player.load();
       player.play();
+      context.state.playing = true;
     }).catch((err) => {
       console.error(err);
     });
@@ -110,6 +111,7 @@ const actions = {
       player.src = context.state.song.URL;
       player.load();
       player.play();
+      context.state.playing = true;
     }).catch((err) => {
       console.error(err);
     });
