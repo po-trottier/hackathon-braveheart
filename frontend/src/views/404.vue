@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: '404',
+  name: 'Invalid',
 };
 </script>
 

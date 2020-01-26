@@ -5,12 +5,12 @@
     flat
     clipped-left
     style="z-index: 15;"
-    height="90"
+    height="96"
     color="white">
     <v-row
       no-gutters
       align="center">
-      <v-app-bar-nav-icon @click="toggleDrawer" />
+      <!--<v-app-bar-nav-icon @click="toggleDrawer" />-->
       <v-spacer />
       <router-link
         :to="{ name: 'player', params: { playlist: '0' } }"
@@ -25,11 +25,11 @@
         <span class="mono">Project::Braveheart</span>
       </router-link>
       <v-spacer />
-      <v-btn
-        icon
-        :to="{ name: 'profile' }">
-        <v-icon>mdi-account-outline</v-icon>
-      </v-btn>
+      <!--<v-btn-->
+      <!--icon-->
+      <!--:to="{ name: 'profile' }">-->
+      <!--<v-icon>mdi-account-outline</v-icon>-->
+      <!--</v-btn>-->
     </v-row>
   </v-app-bar>
 </template>
