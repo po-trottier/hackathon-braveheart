@@ -23,8 +23,9 @@
           <h3>Playlist</h3>
           <v-img
             contain
-            class="my-10"
+            class="mx-auto my-10 elevation-12"
             height="300"
+            width="300"
             src="@/assets/cover.png" />
           <h2>Title</h2>
           <h3>Artist</h3>
