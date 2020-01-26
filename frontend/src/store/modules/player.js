@@ -4,26 +4,27 @@ import placeholder from '@/assets/cover.png';
 
 const state = {
   playing: false,
-  currentIndex: -1,
+  index: -1,
   playlist: {
     name: 'No playlist selected',
     songs: [],
   },
-  currentSong: {
+  song: {
     title: 'No song selected',
-    artist: 'No artist selected',
+    artistName: 'No artist selected',
     album: 'No album selected',
     url: '',
     cover: placeholder,
+    thumbnail: placeholder,
   },
 };
 
 
 const getters = {
   playing: s => s.playing,
-  currentIndex: s => s.currentIndex,
+  index: s => s.index,
   playlist: s => s.playlist,
-  currentSong: s => s.currentSong,
+  song: s => s.song,
 };
 
 const mutations = {
@@ -32,9 +33,9 @@ const mutations = {
   },
   mutateIndex: (s, d) => {
     console.log(d);
-    s.currentIndex = d;
+    s.index = d;
     if (s.playlistSongs.length > 0) {
-      s.currentSong = s.playlistSongs[d];
+      s.song = s.playlistSongs[d];
     }
   },
   mutatePlaylist: (s, d) => {
@@ -47,13 +48,13 @@ const actions = {
     context.commit('mutatePlaying');
   },
   forward: (context) => {
-    const index = context.state.currentIndex < 0
-      ? -1 : (context.state.currentIndex + 1) % context.state.playlistSongs.length;
+    const index = context.state.index < 0
+      ? -1 : (context.state.index + 1) % context.state.playlistSongs.length;
     context.commit('mutateIndex', index);
   },
   backward: (context) => {
-    const index = context.state.currentIndex < 0
-      ? context.state.playlistSongs.length - 1 : context.state.currentIndex - 1;
+    const index = context.state.index < 0
+      ? context.state.playlistSongs.length - 1 : context.state.index - 1;
     context.commit('mutateIndex', index);
   },
   setPlaylist: (context, payload) => {
