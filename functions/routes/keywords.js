@@ -29,73 +29,73 @@ function getUrl(message, callback) {
 
 
     if (negative && happy) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/happy');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy');
     } else if (happy) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/happy');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy');
     }
     
     if (negative && sad) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/happy');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy');
     } else if (sad) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/happy');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy');
     }
 
     if (negative && love) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/sad');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sad');
     } else if (love) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/love');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/love');
     } 
 
     if (negative && relax) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/motivation');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/motivation');
     } else if (relax) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/relax');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/relax');
     }
 
     if (negative && party) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/relax');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/relax');
     } else if (party) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/party');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/party');
     } 
 
     if (negative && motivation) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/relax');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/relax');
     }else if (motivation) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/motivation');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/motivation');
     } 
 
     if (negative && sleep) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/sleep');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sleep');
     } else if (sleep) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/sleep');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sleep');
     } 
 
     if (negative && study) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/party');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/party');
     } else if (study) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/study');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/study');
     } 
 
     if (negative && mood_booster) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/sad');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sad');
     } else if (mood_booster) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/mood_booster');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/mood_booster');
     }
  
     if (negative && mood_booster) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/sad');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/sad');
     } 
     else if (mood_booster) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/mood_booster');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/mood_booster');
     }
 
     if (negative && mad) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/relax');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/relax');
     } else if (mad) {
-        return callback(null, 'https://braveheart-265cb.web.app/player/mad');
+        return callback(null, 'https://project-braveheart.azurewebsites.net/player/mad');
     }
 
-    return callback(null, 'https://braveheart-265cb.web.app/player/happy', false);
+    return callback(null, 'https://project-braveheart.azurewebsites.net/player/happy', false);
 }
 
 exports.handler = (req, res) => {
