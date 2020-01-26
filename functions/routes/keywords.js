@@ -95,7 +95,7 @@ function getUrl(message, callback) {
         return callback(null, 'https://braveheart-265cb.web.app/player/mad');
     }
 
-    return callback(null, 'https://braveheart-265cb.web.app/player/happy');
+    return callback(null, '');
 }
 
 exports.handler = (req, res) => {
