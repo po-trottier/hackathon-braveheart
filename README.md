@@ -22,7 +22,7 @@ This project was created as part of the ConUHacks V hackathon.
 
 ### Objective
 
-Create an innovative music player taylored to users' mood.
+Create an innovative music player that returns playlist tailored to users' mood.
 
 ### Target Audience 
 
