@@ -22,44 +22,59 @@ express.use('/',  async ({body}, res, next) => {
     await logs.doc('BODY').set(body)
     
     try{
-        if(!body.messages){
+        switch(body.trigger){
+            case "delivery:success":
             await smooch.appUsers.sendMessage(body.appUser._id, {
+                text: 'What else can I do for you ?',
+                role: 'appMaker',
                 type: 'text',
-                text: `Hey ${body.appUser.givenName}, how do you feel today?`,
-                role: 'appMaker'
-            })
-        }
-        else {
-            const text = body.messages[0].text
-            if(text.includes('thank')){
+            })            
+            break;
+            case "conversation:start":
                 await smooch.appUsers.sendMessage(body.appUser._id, {
                     type: 'text',
-                    text: `You're welcome ${body.appUser.givenName}`,
+                    text: `Hey ${body.appUser.givenName}, how do you feel today?`,
                     role: 'appMaker'
                 })
+            break;
+            case "message:appUser": {
+                let text = ""
+                if(body.messages && body.messages[0]) text = body.messages[0].text
+                let isThanks = false
+                
+                if(text.includes('thank')){
+                    isThanks = true
+                    await smooch.appUsers.sendMessage(body.appUser._id, {
+                        type: 'text',
+                        text: `You're welcome ${body.appUser.givenName}. What else can I do for you ?`,
+                        role: 'appMaker'
+                    })
+                }
+                await ( async () => {//its dum but only for eslint to shut up
+                    const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
+                    await smooch.appUsers.sendMessage(body.appUser._id, {
+                        text: result.isDefined || isThanks ? 'Here\'s a little something to pump you up !' : 'Sorry, I did not understand what you meant. So here\'s our pick!',
+                        role: 'appMaker',
+                        type: 'text',
+                        actions: [
+                            {
+                                type: 'link',
+                                text: 'Open Custom Playlist',
+                                uri: result.url
+                            }
+                        ]
+                    })
+                })()
+                break;
             }
-            else{
-                const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
-                await smooch.appUsers.sendMessage(body.appUser._id, {
-                    text: 'Here\'s a little something to pimp you up !',
-                    role: 'appMaker',
-                    type: 'text',
-                    actions: [
-                        {
-                            type: 'link',
-                            text: 'V Drop the bass V',
-                            uri: result.url
-                        }
-                    ]
-                })
-            }
-        }
+        }    
     }
     catch(e){
         console.log(`request failed ${e.message}`)
     }
-    
-    res.end()
+    finally{
+        res.end()
+    }
 })
 
 //Error handling

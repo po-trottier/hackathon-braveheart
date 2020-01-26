@@ -95,14 +95,14 @@ function getUrl(message, callback) {
         return callback(null, 'https://braveheart-265cb.web.app/player/mad');
     }
 
-    return callback(null, '');
+    return callback(null, 'https://braveheart-265cb.web.app/player/happy', false);
 }
 
 exports.handler = (req, res) => {
-    getUrl(req.query.message, (err, url) => {
+    getUrl(req.query.message.toLowerCase(), (err, url, isDefined = true) => {
         if (err) {
             res.json({ error: err });
         }
-        res.json({ url });
+        res.json({ url, isDefined });
     });
 };
