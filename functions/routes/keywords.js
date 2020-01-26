@@ -99,7 +99,7 @@ function getUrl(message, callback) {
 }
 
 exports.handler = (req, res) => {
-    getUrl(req.query.message, (err, url, isDefined = true) => {
+    getUrl(req.query.message.toLowerCase(), (err, url, isDefined = true) => {
         if (err) {
             res.json({ error: err });
         }
