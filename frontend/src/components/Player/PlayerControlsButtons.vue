@@ -3,6 +3,12 @@
     no-gutters
     justify="center"
     align="center">
+    <audio
+      id="audio-player"
+      @ended="forward"
+      onended="forward"
+      hidden
+      type="audio/ogg" />
     <v-btn
       icon
       @click="backward"
@@ -39,7 +45,7 @@ export default {
   name: 'PlayerControlsButtons',
 
   computed: {
-    ...mapGetters('player', ['playing']),
+    ...mapGetters('player', ['playing', 'song']),
   },
 
   methods: {
