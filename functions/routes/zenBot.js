@@ -47,7 +47,7 @@ express.use('/',  async ({body}, res, next) => {
                     })
                 }
                 else{
-                    const happy = "https://braveheart-265cb.web.app/player/happy"
+                    //const happy = "https://braveheart-265cb.web.app/player/happy"
                     const result = JSON.parse(await request(`https://us-central1-braveheart-265cb.cloudfunctions.net/keywords/?message=${text}`))
                     await smooch.appUsers.sendMessage(body.appUser._id, {
                         text: 'Here\'s a little something to pump you up !',
@@ -56,8 +56,8 @@ express.use('/',  async ({body}, res, next) => {
                         actions: [
                             {
                                 type: 'link',
-                                text: 'Open Custom Playlist',
-                                uri: result.url || happy
+                                text: result.isDefined ? 'Open Custom Playlist' : 'Sorry, I did not understand what you met. So here\'s ower to pick!',
+                                uri: result.url
                             }
                         ]
                     })
