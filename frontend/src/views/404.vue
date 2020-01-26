@@ -8,7 +8,7 @@
         404 - Page not found
       </h1>
       <v-btn
-        :to="{ name: 'player' }"
+        :to="{ name: 'player', params: { playlist: '0' } }"
         x-large
         depressed
         rounded>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: '404',
+  name: 'Invalid',
 };
 </script>
 

@@ -1,11 +1,11 @@
 <template>
-h1
+  <h1>Landing</h1>
 </template>
 
 <script>
-    export default {
-        name: "LandingCard"
-    }
+export default {
+  name: 'LandingCard',
+};
 </script>
 
 <style scoped>

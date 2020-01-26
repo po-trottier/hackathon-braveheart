@@ -5,15 +5,15 @@
     flat
     clipped-left
     style="z-index: 15;"
-    height="90"
+    height="96"
     color="white">
     <v-row
       no-gutters
       align="center">
-      <v-app-bar-nav-icon @click="toggleDrawer" />
+      <!--<v-app-bar-nav-icon @click="toggleDrawer" />-->
       <v-spacer />
       <router-link
-        :to="{ name: 'player' }"
+        :to="{ name: 'player', params: { playlist: current } }"
         exact
         class="py-1 align-center">
         <v-img
@@ -25,11 +25,11 @@
         <span class="mono">Project::Braveheart</span>
       </router-link>
       <v-spacer />
-      <v-btn
-        icon
-        :to="{ name: 'profile' }">
-        <v-icon>mdi-account-outline</v-icon>
-      </v-btn>
+      <!--<v-btn-->
+      <!--icon-->
+      <!--:to="{ name: 'profile' }">-->
+      <!--<v-icon>mdi-account-outline</v-icon>-->
+      <!--</v-btn>-->
     </v-row>
   </v-app-bar>
 </template>
@@ -39,6 +39,12 @@ import { mapActions } from 'vuex';
 
 export default {
   name: 'HeaderBar',
+
+  computed: {
+    current() {
+      return this.$route.params.playlist ? this.$route.params.playlist : '0';
+    },
+  },
 
   methods: {
     ...mapActions('drawer', ['toggleDrawer']),
