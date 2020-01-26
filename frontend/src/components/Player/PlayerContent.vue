@@ -20,7 +20,9 @@
           <h1 style="font-size: 2.5rem;">
             Now Playing
           </h1>
-          <h3 class="text-capitalize">{{ playlist.name }} - Playlist</h3>
+          <h3 class="text-capitalize">
+            {{ playlist.name }} - Playlist
+          </h3>
           <v-img
             contain
             class="mx-auto my-10 elevation-12"
