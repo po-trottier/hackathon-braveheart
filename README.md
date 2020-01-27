@@ -31,9 +31,11 @@ Music streaming services users, social media users and music lovers.
 
 ### Usage
 
-Head on over to our chat-bot's web page and share your current mood with it. It will return you the link to a music playlist taylored to your current mental state.
+Head on over to our chat-bot's web page and share your current mood with it. It will return you the link to a music playlist tailored to your current mental state.
 
 - [Link to the bot](https://m.me/105419994348348)
+
+- [Demo video (.mp4 download link)](https://github.com/po-trottier/project-braveheart/raw/master/demo/demo.mp4)
 
 ### Business Value
 
@@ -42,9 +44,11 @@ Helps users in times of need by providing them with playlists to boost their moo
 ### Technology Stack
 
 - Frontend:
-    - **Vue.JS**
+    - **Vue.js**
+        - Vue.js is helpful for making progressive web apps.
 - Backend:
     - **Firebase**
+    - **Node.js**
 - APIs:
     - **Zendesk API**
         - Allowed us to create an interactive bot across multiple platforms very easily
@@ -54,7 +58,12 @@ Helps users in times of need by providing them with playlists to boost their moo
     - **word2vec - Skip-Gram Model**
     - Trained on a 5 000 000+ words model
         - Lets us predict the general mood of a sentence based on specific words the ML algorithm was trained to recognize and categorize
-
+- CI/CD:
+    - **GitHub Actions + Docker + Firebase Functions**
+        - The GitHub Action builds a docker image and pushes the changes to the Firebase Functions whenever a commit is pushed to master
+- Hosting:
+    - Azure Web App for Containers
+    - Azure Container Registry
 
 ### Useful Link(s)
 
