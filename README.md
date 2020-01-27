@@ -3,8 +3,7 @@
 [![Deploy Functions](https://github.com/po-trottier/project-braveheart/workflows/Deploy%20Functions/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 [![Docker Image CI](https://github.com/po-trottier/project-braveheart/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 
-This project was created as part of the ConUHacks V hackathon.
-
+This project was created as part of the **ConUHacks V** hackathon on **January 25, 2020** .
 
 **Challenges:**
 
