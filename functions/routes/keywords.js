@@ -5,7 +5,7 @@ function getUrl(message, callback) {
         if (err) {
             return callback(null, 'https://www.youtube.com/watch?v=oHg5SJYRHA0', false);
         }
-        return callback(null, 'https://project-braveheart.azurewebsites.net/player/' + classifier.classify(message), false);
+        return callback(null, 'https://localhost:8080/player/' + classifier.classify(message), false);
     });
 }
 
