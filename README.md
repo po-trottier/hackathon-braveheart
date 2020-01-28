@@ -1,5 +1,7 @@
 # Projec::Braveheart
 
+**All services were taken down because we ran out of free credits!**
+
 [![Deploy Functions](https://github.com/po-trottier/project-braveheart/workflows/Deploy%20Functions/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 [![Docker Image CI](https://github.com/po-trottier/project-braveheart/workflows/Docker%20Image%20CI/badge.svg)](https://github.com/po-trottier/project-braveheart/actions)
 
@@ -33,7 +35,7 @@ Music streaming services users, social media users and music lovers.
 
 Head on over to our chat-bot's web page and share your current mood with it. It will return you the link to a music playlist tailored to your current mental state.
 
-- [Link to the bot](https://m.me/105419994348348)
+- [Link to the bot](https://m.me/105419994348348) (Not functionnal anymore)
 
 - [Demo video (.mp4 download link)](https://github.com/po-trottier/project-braveheart/raw/master/demo/demo.mp4)
 
@@ -55,10 +57,10 @@ Helps users in times of need by providing them with playlists to boost their moo
     - **Octave API**
         - Allows for the music streaming in the player app
 - ML Algorithm:
-    - **word2vec - Skip-Gram Model**
-    - Trained on a 5 000 000+ words model
+    - **Natural - Classifiers**
+    - Trained with custom model to give good answers
         - Lets us predict the general mood of a sentence based on specific words the ML algorithm was trained to recognize and categorize
-- CI/CD:
+- CI/CD *(Disabled)*:
     - **GitHub Actions + Docker + Firebase Functions**
         - The GitHub Action builds a docker image and pushes the changes to the Firebase Functions whenever a commit is pushed to master
 - Hosting:
