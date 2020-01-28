@@ -1,0 +1,48 @@
+{
+  "feelings": [
+    {
+      "feeling": "negative",
+      "values" : ["not", "don't", "dont",  "do not", "cant", "can't", "can not"]
+    },
+    {
+      "feeling": "happy",
+      "values" : ["friend", "like", "amazing", "gr8", "superb", "gay", "excited", "new", "thrilled", "cheerful", "happy", "good", "joyful", "smiley", "glad", "great"]
+    },
+    {
+      "feeling": "sad",
+      "values" : ["dead", "die",  "hit me", "kill myself", "shit", "accident", "died", "hurt", "cry", "heartbroken", "sad", "depressed", "bad", "pity", "pitiful"]
+    },
+    {
+      "feeling":  "mad",
+      "values" : ["that bitch", "punch", "screw you", "fuck you", "kill", "fired", "pissed", "cheated", "rage", "angry", "dumb", "idiot", "shit", "mad"]
+    },
+    {
+      "feeling": "love",
+      "values" : ["sexy", "pretty", "beautiful", "fuck me", "chick", "hot", "we", "hook", "hook up", "hookup", "bumble", "tinder", "date", "marry", "married", "kiss", "roman", "sex", "love"]
+    },
+    {
+      "feeling": "relax",
+      "values" : ["uncertain", "wait", "spa", "road", "exam", "anxious",  "nervous", "hate", "house", "home", "chill", "hate", "stressed", "drive", "car", "relax"]
+    },
+    {
+      "feeling": "party",
+      "values" : ["move", "dance", "turn", "trip", "newyears", "new year", "predrink", "pre drink", "club", "friends", "turnup", "turn up", "loose", "fun", "hype", "party"]
+    },
+    {
+      "feeling": "motivation",
+      "values" : ["motivation", "motivated", "hate",  "difficult", "hard", "hackathon", "conuhacks", "challenge", "working out", "work out", "gym", "run", "exercise", "focus", "hard"]
+    },
+    {
+      "feeling": "sleep",
+      "values" : ["sleep", "hate", "rest", "bed", "l8", "late", "nite", "night", "exhausted", "tired", "lay", "heavy", "sleep"]
+    },
+    {
+      "feeling": "study",
+      "values" : ["concentrate", "chapters", "material", "read", "write", "writing", "programming", "program", "coding", "code", "concentrate", "concentration", "homework", "lab", "paper", "study"]
+    },
+    {
+      "feeling": "mood_booster",
+      "values" :  ["boost", "kill me",  "overwhelmed", "burn", "hate", "mood_booster", "day to be over", "day to die", "feel better", "pick me up", "improve", "get better", "down"]
+    }
+  ]
+}
