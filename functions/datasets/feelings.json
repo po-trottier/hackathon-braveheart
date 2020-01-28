@@ -1,12 +1,8 @@
 {
   "feelings": [
     {
-      "feeling": "negative",
-      "values" : ["not", "don't", "dont",  "do not", "cant", "can't", "can not"]
-    },
-    {
       "feeling": "happy",
-      "values" : ["friend", "like", "amazing", "gr8", "superb", "gay", "excited", "new", "thrilled", "cheerful", "happy", "good", "joyful", "smiley", "glad", "great"]
+      "values" : ["not good", "not great", "friend", "like", "amazing", "gr8", "superb", "gay", "excited", "new", "thrilled", "cheerful", "happy", "good", "joyful", "smiley", "glad", "great"]
     },
     {
       "feeling": "sad",
@@ -34,7 +30,7 @@
     },
     {
       "feeling": "sleep",
-      "values" : ["sleep", "hate", "rest", "bed", "l8", "late", "nite", "night", "exhausted", "tired", "lay", "heavy", "sleep"]
+      "values" : ["sleep", "hate", "rest", "bed", "l8", "late", "nite", "night", "exhausted", "tired", "super tired", "lay", "heavy", "sleep"]
     },
     {
       "feeling": "study",
