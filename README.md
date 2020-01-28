@@ -1,4 +1,4 @@
-# Projec::Braveheart [WINNING PROJECT]
+# Projec::Braveheart (Winning Team)
 
 **All services were taken down because we ran out of free credits!**
 
