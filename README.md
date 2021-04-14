@@ -70,3 +70,9 @@ Helps users in times of need by providing them with playlists to boost their moo
 ### Useful Link(s)
 
 - [Frontend README](https://github.com/po-trottier/project-braveheart/blob/master/frontend/README.md)
+
+### Screenshots
+
+![image](https://user-images.githubusercontent.com/41876093/114652594-2c86a500-9cb4-11eb-992a-85bfb2b740c0.png)
+
+![image](https://user-images.githubusercontent.com/41876093/114652636-4b853700-9cb4-11eb-8122-ff786e0e7031.png)
